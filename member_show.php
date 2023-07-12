@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css" />
 <?php
     include "connect.php";
 
@@ -6,9 +7,36 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
   // output data of each row
+?>
+
+<table class="table">
+  <th> name - surname </th>
+  <th> email </th>
+  <th> phone </th>
+  <th> address </th>
+  <th> Edit </th>
+  <th> Delete </th>
+
+<?php
   while($row = mysqli_fetch_assoc($result)) {
-    echo "$row[firstname] $row[lastname] $row[email] $row[phone] $row[address] <br/>";
+
+?>
+  <tr>
+      <td><?php echo"$row[firstname] $row[lastname]"; ?></td>
+      <td><?php echo"$row[email]"; ?></td>
+      <td><?php echo"$row[phone]"; ?></td>
+      <td><?php echo"$row[address]"; ?></td>
+      <td><?php echo"<a href='member_edit.php?id=$row[id]'> Edit </a>"; ?></td>
+      <td><?php echo"<a href='member_del.php?id=$row[id]'> Delete </a>"; ?></td>
+</tr>
+
+<?php
   }
+?>
+
+</table>
+
+<?php
 } else {
   echo "0 results";
 }
