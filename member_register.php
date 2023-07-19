@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="./styles.css" />
 <div class="container">
-<h1 class="text-center"> Register </h1>
+<h1 class="text-center"> ลงทะเบียน </h1>
 <form action="member_insert.php" method="post" enctype="multipart/form-data">
     ชื่อ <input type="text" name="firstname" class="input" />
     นามสกุล <input type="text" name="lastname" class="input" />

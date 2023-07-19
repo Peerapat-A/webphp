@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="./styles.css" />
 <div class="container">
+<h1 class="text-center"> แก้ไขข้อมูลสินค้า </h1>
 <?php
     include "connect.php";
     $sql = "SELECT * FROM tbl_product WHERE id='$_GET[id]' ";
