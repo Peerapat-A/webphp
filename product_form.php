@@ -7,6 +7,7 @@
     ราคา <input type="text" name="price" class="input" /> 
     คลังสินค้า <input type="text" name="stock" class="input" /> 
     คำอธิบาย <textarea name="description" class="input" > </textarea> 
+    แนบรูป <input type="file" name="photo" class="input" /> 
     <input type="submit" value="บันทึกข้อมูล" class="button" />
 
 </form>

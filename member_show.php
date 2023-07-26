@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="./styles.css" />
-<div class="center">
 <?php
     include "connect.php";
 
@@ -11,25 +10,27 @@ if (mysqli_num_rows($result) > 0) {
 ?>
 
 <table class="table">
-  <th width=25%> name - surname </th>
-  <th width=20%> email </th>
-  <th width=15%> phone </th>
-  <th width=30%> address </th>
-  <th width=5%> Edit </th>
-  <th width=5%> Delete </th>
+  <th > name - surname </th>
+  <th > email </th>
+  <th > phone </th>
+  <th > address </th>
+  <th > picture </th>
+  <th > Edit </th>
+  <th > Delete </th>
 
 <?php
   while($row = mysqli_fetch_assoc($result)) {
 
 ?>
   <tr>
-      <td><?php echo"$row[firstname] $row[lastname]"; ?></td>
-      <td><?php echo"$row[email]"; ?></td>
-      <td><?php echo"$row[phone]"; ?></td>
-      <td><?php echo"$row[address]"; ?></td>
-      <td><?php echo"<a href='member_edit.php?id=$row[id]'> Edit </a>"; ?></td>
-      <td><?php echo"<a href='member_del.php?id=$row[id]'> Delete </a>"; ?></td>
-</tr>
+      <td><?php echo"$row[firstname] $row[lastname]"; ?> </td>
+      <td><?php echo"$row[email]"; ?> </td>
+      <td><?php echo"$row[phone]"; ?> </td>
+      <td><?php echo"$row[address]"; ?> </td>
+      <td><img src="./images/<?php echo $row[photo] ?>" width="200px" />  </td>
+      <td><?php echo"<a href='member_edit.php?id=$row[id]'> Edit </a> "; ?> </td>
+      <td><?php echo"<a href='member_del.php?id=$row[id]'> Delete </a> "; ?> </td>
+  </tr>
 
 <?php
   }
@@ -45,4 +46,3 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($conn);
 
 ?>
-<div>

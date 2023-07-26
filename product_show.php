@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="./styles.css" />
-<div class="center">
 <?php
     include "connect.php";
 
@@ -11,12 +10,13 @@ if (mysqli_num_rows($result) > 0) {
   ?>
 
   <table class="table">
-    <th width=35%> product name </th>
-    <th width=5%> price </th>
-    <th width=5%> stock </th>
-    <th width=45%> description </th>
-    <th width=5%> Edit </th>
-    <th width=5%> Delete </th>
+    <th> product name </th>
+    <th> price </th>
+    <th> stock </th>
+    <th> description </th>
+    <th> picture </th>
+    <th> Edit </th>
+    <th> Delete </th>
   
   <?php
     while($row = mysqli_fetch_assoc($result)) {
@@ -27,6 +27,7 @@ if (mysqli_num_rows($result) > 0) {
         <td><?php echo"$row[price]"; ?></td>
         <td><?php echo"$row[stock]"; ?></td>
         <td><?php echo"$row[description]"; ?></td>
+        <td><img src="./images/<?php echo $row[photo] ?>" width="200px" />  </td>
         <td><?php echo"<a href='product_edit.php?id=$row[id]'> Edit </a>"; ?></td>
       <td><?php echo"<a href='product_del.php?id=$row[id]'> Delete </a>"; ?></td>
   </tr>
@@ -45,4 +46,3 @@ if (mysqli_num_rows($result) > 0) {
   mysqli_close($conn);
   
   ?>
-  <div>
