@@ -29,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
       <td><?php echo"$row[address]"; ?> </td>
       <td><img src="./images/<?php echo $row[photo] ?>" width="200px" />  </td>
       <td><?php echo"<a href='member_edit.php?id=$row[id]'> Edit </a> "; ?> </td>
-      <td><?php echo"<a href='member_del.php?id=$row[id]'> Delete </a> "; ?> </td>
+      <td><?php echo"<a href='member_del.php?id=$row[id]&&photo=$row[photo]'> Delete </a> "; ?> </td>
   </tr>
 
 <?php
