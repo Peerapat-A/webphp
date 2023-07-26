@@ -14,7 +14,8 @@
     อีเมล <input type="email" name="email" value="<?php echo $row[email]; ?>" class="input"/> 
     เบอร์โทร <input type="text" name="phone" value="<?php echo $row[phone]; ?>" class="input"/> 
     ที่อยู่ <textarea name="address" class="input"> <?php echo $row[address]; ?> </textarea> 
-    แนบรูป <input type="file" name="photo" value="<?php echo $row[photo]; ?>" class="input" /> 
+    แนบรูป <input type="file" name="photo" class="input" />
+    <img src="./images/<?php echo $row[photo] ?>" width="200px" /> 
     <input type="submit" value="update" class="button"/>
 
 </form>

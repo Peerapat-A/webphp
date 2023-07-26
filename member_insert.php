@@ -10,9 +10,9 @@ VALUES ('$_POST[firstname]', '$_POST[lastname]', '$_POST[email]', '$_POST[passwo
 
  //if (move_uploaded_file($tempname, $folder)) {
   if (copy($tempname, $folder)) {
-    echo "อับโหลดรู้ได้แล้ว";
+    echo "finish upload";
   } else {
-    echo "อับโหลดรูปไม่ได้";
+    echo "can't upload";
   }
 
 if (mysqli_query($conn, $sql)) {

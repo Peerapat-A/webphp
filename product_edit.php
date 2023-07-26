@@ -13,7 +13,8 @@
     ราคา <input type="text" name="price" value="<?php echo $row[price]; ?>" class="input"/>
     คลังสินค้า <input type="text" name="stock" value="<?php echo $row[stock]; ?>" class="input"/>
     คำอธิบาย <textarea name="description" class="input"> <?php echo $row[description]; ?> </textarea>
-    แนบรูป <input type="file" name="photo" value="<?php echo $row[photo]; ?>" class="input" /> 
+    แนบรูป <input type="file" name="photo" class="input" /> 
+    <img src="./images/<?php echo $row[photo] ?>" width="200px" /> 
     <input type="submit" value="update" class="button"/>
 
 </form>
